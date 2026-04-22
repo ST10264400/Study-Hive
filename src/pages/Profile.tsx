@@ -17,16 +17,16 @@ const Profile = () => {
       <div className="bg-gradient-hero border-b border-border">
         <div className="container py-10 flex flex-wrap items-center gap-6">
           <Avatar className="h-24 w-24 ring-4 ring-background shadow-card">
-            <AvatarFallback className="bg-gradient-primary text-primary-foreground text-2xl font-bold">AM</AvatarFallback>
+            <AvatarFallback className="bg-gradient-primary text-primary-foreground text-2xl font-bold">OR</AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
-            <h1 className="text-3xl font-bold">Alex Morgan</h1>
-            <p className="text-muted-foreground">Computer Science · Year 2 · King's University</p>
+            <h1 className="text-3xl font-bold">Oratile Rapolai</h1>
+            <p className="text-muted-foreground">Information Technology · Year 3 · Rosebank College</p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <Badge className="bg-primary-soft text-primary border-0">Algorithms</Badge>
-              <Badge className="bg-primary-soft text-primary border-0">Data Structures</Badge>
-              <Badge className="bg-primary-soft text-primary border-0">UX Design</Badge>
-              <Badge className="bg-primary-soft text-primary border-0">Statistics</Badge>
+              <Badge className="bg-primary-soft text-primary border-0">Human Computer Interaction 6322</Badge>
+              <Badge className="bg-primary-soft text-primary border-0">Introduction to Research for ICT 7311</Badge>
+              <Badge className="bg-primary-soft text-primary border-0">Business Analysis 7321</Badge>
+              <Badge className="bg-primary-soft text-primary border-0">IT Risk Management 7311</Badge>
             </div>
           </div>
           <Button variant="outline"><Edit3 className="h-4 w-4" />Edit profile</Button>
@@ -38,8 +38,8 @@ const Profile = () => {
           <Card className="border-border/60">
             <CardHeader><CardTitle className="text-base">About me</CardTitle></CardHeader>
             <CardContent className="text-sm text-muted-foreground space-y-2">
-              <p>Hi! I'm Alex 👋 I'm in my second year of CS and I love studying with people who explain things kindly. Currently focused on algorithms and starting to dip into UX design.</p>
-              <p>Looking for: study buddies for CS201, weekly revision sessions, and someone who actually enjoys discussing time complexity. ☕</p>
+              <p>Hi! I'm Oratile 👋 I'm a third-year IT student at Rosebank College who enjoys learning with people who share ideas openly. Currently diving into HCI, research methods, and business analysis.</p>
+              <p>Looking for: study buddies for HCI 6322 and Research 7311, weekly revision sessions, and people keen to chat about IT risk and business analysis. ☕</p>
             </CardContent>
           </Card>
 
@@ -60,10 +60,10 @@ const Profile = () => {
             <CardHeader><CardTitle className="text-base">Edit details</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-3">
-                <div className="space-y-1.5"><Label>Display name</Label><Input defaultValue="Alex Morgan" /></div>
+                <div className="space-y-1.5"><Label>Display name</Label><Input defaultValue="Oratile Rapolai" /></div>
                 <div className="space-y-1.5"><Label>Pronouns</Label><Input defaultValue="they/them" /></div>
-                <div className="space-y-1.5"><Label>Course</Label><Input defaultValue="Computer Science" /></div>
-                <div className="space-y-1.5"><Label>Year</Label><Input defaultValue="Year 2" /></div>
+                <div className="space-y-1.5"><Label>Course</Label><Input defaultValue="Information Technology" /></div>
+                <div className="space-y-1.5"><Label>Year</Label><Input defaultValue="Year 3" /></div>
               </div>
               <div className="space-y-1.5"><Label>Bio</Label><Textarea defaultValue="I love studying with people who explain things kindly." /></div>
               <Button variant="hero">Save changes</Button>
