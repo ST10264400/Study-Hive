@@ -61,7 +61,7 @@ const Profile = () => {
             <CardContent className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="space-y-1.5"><Label>Display name</Label><Input defaultValue="Oratile Rapolai" /></div>
-                <div className="space-y-1.5"><Label>Pronouns</Label><Input defaultValue="they/them" /></div>
+                <div className="space-y-1.5"><Label>Pronouns</Label><Input defaultValue="she/her" /></div>
                 <div className="space-y-1.5"><Label>Course</Label><Input defaultValue="Information Technology" /></div>
                 <div className="space-y-1.5"><Label>Year</Label><Input defaultValue="Year 3" /></div>
               </div>
