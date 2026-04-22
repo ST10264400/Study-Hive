@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Search, LayoutDashboard, Users, User, HelpCircle, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,8 +14,6 @@ const navItems = [
 ];
 
 const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNavCta?: boolean }) => {
-  const { pathname } = useLocation();
-  const onAuth = pathname === "/auth";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -46,7 +44,7 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
             ))}
           </nav>
 
-          {!hideNavCta && !onAuth && (
+          {!hideNavCta && (
             <div className="flex items-center gap-2">
               <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
                 <Link to="/auth">Log in</Link>
