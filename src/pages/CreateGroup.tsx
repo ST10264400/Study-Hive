@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import Layout from "@/components/Layout";
+import Crumbs from "@/components/Crumbs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,7 +23,7 @@ const CreateGroup = () => {
     return (
       <Layout>
         <div className="container max-w-xl py-20 text-center">
-          <CheckCircle2 className="h-14 w-14 text-success mx-auto mb-4" />
+          <CheckCircle2 className="h-14 w-14 text-success mx-auto mb-4" aria-hidden />
           <h1 className="text-2xl font-bold">Your group is live! 🎉</h1>
           <p className="text-muted-foreground mt-2 mb-6">Invite a buddy or share the link to grow your circle.</p>
           <div className="flex justify-center gap-2">
@@ -35,13 +37,16 @@ const CreateGroup = () => {
 
   return (
     <Layout>
-      <div className="container max-w-3xl py-10">
-        <h1 className="text-3xl md:text-4xl font-bold">Create a study group</h1>
-        <p className="text-muted-foreground mt-2">Set the basics — you can always tweak things later.</p>
+      <div className="container max-w-3xl py-10 space-y-4">
+        <Crumbs items={[{ label: "Find Groups", to: "/groups" }, { label: "Create Group" }]} />
+        <div>
+          <h1 className="text-3xl md:text-4xl font-bold">Create a study group</h1>
+          <p className="text-muted-foreground mt-2">Set the basics — you can always tweak things later.</p>
+        </div>
 
         <form
-          onSubmit={(e) => { e.preventDefault(); setDone(true); }}
-          className="mt-8 space-y-5"
+          onSubmit={(e) => { e.preventDefault(); toast.success("Group created successfully! 🎉", { description: "Invite your buddies to get started." }); setDone(true); }}
+          className="mt-4 space-y-5"
         >
           <Card className="border-border/60">
             <CardContent className="p-6 space-y-5">
@@ -113,7 +118,7 @@ const CreateGroup = () => {
 
           <div className="flex justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => navigate(-1)}>Cancel</Button>
-            <Button type="submit" variant="hero">Create group</Button>
+            <Button type="submit" variant="hero">Create New Group</Button>
           </div>
         </form>
       </div>

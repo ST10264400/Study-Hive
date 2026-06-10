@@ -12,6 +12,7 @@ import CreateGroup from "./pages/CreateGroup.tsx";
 import Profile from "./pages/Profile.tsx";
 import Messages from "./pages/Messages.tsx";
 import Help from "./pages/Help.tsx";
+import Accessibility from "./pages/Accessibility.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/profile" element={<Profile />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
