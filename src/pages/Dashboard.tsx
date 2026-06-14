@@ -248,7 +248,7 @@ const Dashboard = () => {
                   <Award className="h-4 w-4 text-primary" aria-hidden /> Achievement badges
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-2 gap-3">
+              <CardContent className="grid grid-cols-3 gap-2">
                 {badges.map((b) => (
                   <div key={b.t} className={`rounded-xl p-3 text-center border ${b.earned ? "bg-primary-soft border-primary/20" : "bg-secondary border-border opacity-60"}`}>
                     <div className={`h-10 w-10 mx-auto rounded-full grid place-items-center mb-2 ${b.earned ? "bg-gradient-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
