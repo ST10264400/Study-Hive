@@ -89,9 +89,9 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
               <span className="grid place-items-center h-7 w-7 rounded-lg bg-gradient-primary text-primary-foreground">
                 <GraduationCap className="h-4 w-4" aria-hidden />
               </span>
-              StudyHive
+              Study Buddies Connect
             </div>
-            <p className="text-muted-foreground">A calmer way to find study partners and grow together.</p>
+            <p className="text-muted-foreground">Connect, collaborate, and succeed together.</p>
           </div>
           <div>
             <h3 className="font-semibold mb-3">Product</h3>
