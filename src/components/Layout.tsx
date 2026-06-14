@@ -116,7 +116,7 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
         </div>
         <div className="border-t border-border">
           <div className="container py-4 text-xs text-muted-foreground flex flex-wrap justify-between gap-2">
-            <span>© {new Date().getFullYear()} StudyHive — Prototype</span>
+            <span>© {new Date().getFullYear()} Study Buddies Connect — Prototype</span>
             <span>Designed with WCAG 2.0 in mind</span>
           </div>
         </div>
