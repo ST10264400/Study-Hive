@@ -20,11 +20,11 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-3 focus:py-2 focus:rounded-md">Skip to main content</a>
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/90 border-b border-border">
         <div className="container flex h-16 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2 font-bold text-lg group" aria-label="StudyHive home">
+          <Link to="/" className="flex items-center gap-2 font-bold text-lg group" aria-label="Study Buddies Connect home">
             <span className="grid place-items-center h-9 w-9 rounded-xl bg-gradient-primary text-primary-foreground shadow-soft transition-transform group-hover:scale-105">
               <GraduationCap className="h-5 w-5" aria-hidden />
             </span>
-            <span className="tracking-tight">StudyHive</span>
+            <span className="tracking-tight">Study Buddies Connect</span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-1">
@@ -89,9 +89,9 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
               <span className="grid place-items-center h-7 w-7 rounded-lg bg-gradient-primary text-primary-foreground">
                 <GraduationCap className="h-4 w-4" aria-hidden />
               </span>
-              StudyHive
+              Study Buddies Connect
             </div>
-            <p className="text-muted-foreground">A calmer way to find study partners and grow together.</p>
+            <p className="text-muted-foreground">Connect, collaborate, and succeed together.</p>
           </div>
           <div>
             <h3 className="font-semibold mb-3">Product</h3>
@@ -116,7 +116,7 @@ const Layout = ({ children, hideNavCta = false }: { children: ReactNode; hideNav
         </div>
         <div className="border-t border-border">
           <div className="container py-4 text-xs text-muted-foreground flex flex-wrap justify-between gap-2">
-            <span>© {new Date().getFullYear()} StudyHive — Prototype</span>
+            <span>© {new Date().getFullYear()} Study Buddies Connect — Prototype</span>
             <span>Designed with WCAG 2.0 in mind</span>
           </div>
         </div>

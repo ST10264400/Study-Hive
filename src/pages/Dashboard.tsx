@@ -10,15 +10,16 @@ import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Calendar, FileText, MessageSquare, Plus, Search, Sparkles, TrendingUp, Users,
-  Upload, Award, Trophy, Star, Crown, Clock, BookOpen,
+  Upload, Award, Trophy, Star, Crown, Clock, BookOpen, GraduationCap, HeartHandshake,
 } from "lucide-react";
 import { groups } from "@/data/groups";
 
 const quickActions = [
-  { t: "Join a Group", d: "Browse open study groups", icon: Search, to: "/groups", variant: "soft" as const },
-  { t: "Create New Group", d: "Start your own study circle", icon: Plus, to: "/groups/create", variant: "hero" as const },
-  { t: "View Messages", d: "5 unread conversations", icon: MessageSquare, to: "/messages", variant: "soft" as const },
+  { t: "Join Group", d: "Browse open study groups", icon: Search, to: "/groups", variant: "soft" as const },
+  { t: "Create Group", d: "Start your own study circle", icon: Plus, to: "/groups/create", variant: "hero" as const },
   { t: "Upload Notes", d: "Share resources with your group", icon: Upload, to: "/groups/cs201", variant: "soft" as const },
+  { t: "Messages", d: "5 unread conversations", icon: MessageSquare, to: "/messages", variant: "soft" as const },
+  { t: "Schedule Session", d: "Plan a study meetup", icon: Calendar, to: "/groups/cs201", variant: "soft" as const },
 ];
 
 const badges = [
@@ -26,6 +27,16 @@ const badges = [
   { t: "Active Collaborator", icon: Award, earned: true },
   { t: "Top Contributor", icon: Trophy, earned: true },
   { t: "Study Champion", icon: Crown, earned: false },
+  { t: "Peer Mentor", icon: HeartHandshake, earned: true },
+  { t: "Academic Achiever", icon: GraduationCap, earned: false },
+];
+
+const recentActivity = [
+  { icon: Users, t: "Joined HCI 6322 Study Circle", w: "2 hours ago" },
+  { icon: FileText, t: "Uploaded Research Methods summary notes", w: "Yesterday" },
+  { icon: MessageSquare, t: "Replied to discussion in Business Analysis 7321", w: "Yesterday" },
+  { icon: Calendar, t: "RSVP'd to Saturday study session", w: "2 days ago" },
+  { icon: Trophy, t: "Earned the Peer Mentor badge", w: "3 days ago" },
 ];
 
 const Dashboard = () => {
@@ -43,13 +54,13 @@ const Dashboard = () => {
             <p className="text-sm text-primary font-medium flex items-center gap-1.5">
               <Sparkles className="h-4 w-4" aria-hidden /> Welcome back, Oratile
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold mt-1 tracking-tight">Welcome back!</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mt-1 tracking-tight">Welcome Back, Student!</h1>
             <p className="text-muted-foreground mt-2 max-w-xl text-base">
-              Continue building your academic success through collaboration.
+              Continue building your academic success through collaboration and shared learning experiences.
             </p>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" onClick={() => toast.success("Opening group search")}>
+            <Button asChild variant="outline">
               <Link to="/groups"><Search className="h-4 w-4" aria-hidden />Find a group</Link>
             </Button>
             <Button asChild variant="hero">
@@ -58,15 +69,18 @@ const Dashboard = () => {
           </div>
         </header>
 
-        {/* Motivation strip */}
-        <section aria-label="Motivational messages" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[0, 1, 2, 3].map((i) => <MotivationCard key={i} index={i} />)}
+        {/* Motivation Centre */}
+        <section aria-labelledby="motivation-heading">
+          <h2 id="motivation-heading" className="text-xl font-semibold mb-4">Motivation Centre</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[0, 1, 2, 3, 4].map((i) => <MotivationCard key={i} index={i} />)}
+          </div>
         </section>
 
         {/* Quick actions */}
         <section aria-labelledby="quick-actions-heading">
           <h2 id="quick-actions-heading" className="text-xl font-semibold mb-4">Quick actions</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {quickActions.map((a) => (
               <Card key={a.t} className="border-border/60 hover:shadow-card hover:-translate-y-0.5 transition-all">
                 <CardContent className="p-5 space-y-3">
@@ -94,7 +108,7 @@ const Dashboard = () => {
             {[
               { label: "Groups Joined", value: "4", icon: Users },
               { label: "Notes Shared", value: "12", icon: FileText },
-              { label: "Discussions Participated", value: "27", icon: MessageSquare },
+              { label: "Discussion Contributions", value: "27", icon: MessageSquare },
               { label: "Study Hours Logged", value: "48h", icon: Clock },
             ].map((s) => (
               <Card key={s.label} className="border-border/60">
@@ -173,6 +187,28 @@ const Dashboard = () => {
                 ))}
               </div>
             </section>
+
+            {/* Recent Activity */}
+            <section aria-labelledby="activity-heading" className="pt-4">
+              <h2 id="activity-heading" className="text-xl font-semibold mb-3">Recent activity</h2>
+              <Card className="border-border/60">
+                <CardContent className="p-2">
+                  <ul className="divide-y divide-border">
+                    {recentActivity.map((a, i) => (
+                      <li key={i} className="flex items-center gap-3 p-3">
+                        <div className="h-9 w-9 rounded-lg bg-primary-soft text-primary grid place-items-center flex-shrink-0">
+                          <a.icon className="h-4 w-4" aria-hidden />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm font-medium truncate">{a.t}</div>
+                          <div className="text-xs text-muted-foreground">{a.w}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </section>
           </section>
 
           {/* Side: schedule + badges + buddies */}
@@ -212,7 +248,7 @@ const Dashboard = () => {
                   <Award className="h-4 w-4 text-primary" aria-hidden /> Achievement badges
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-2 gap-3">
+              <CardContent className="grid grid-cols-3 gap-2">
                 {badges.map((b) => (
                   <div key={b.t} className={`rounded-xl p-3 text-center border ${b.earned ? "bg-primary-soft border-primary/20" : "bg-secondary border-border opacity-60"}`}>
                     <div className={`h-10 w-10 mx-auto rounded-full grid place-items-center mb-2 ${b.earned ? "bg-gradient-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>
