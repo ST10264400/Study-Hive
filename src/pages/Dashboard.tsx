@@ -10,15 +10,16 @@ import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Calendar, FileText, MessageSquare, Plus, Search, Sparkles, TrendingUp, Users,
-  Upload, Award, Trophy, Star, Crown, Clock, BookOpen,
+  Upload, Award, Trophy, Star, Crown, Clock, BookOpen, GraduationCap, HeartHandshake,
 } from "lucide-react";
 import { groups } from "@/data/groups";
 
 const quickActions = [
-  { t: "Join a Group", d: "Browse open study groups", icon: Search, to: "/groups", variant: "soft" as const },
-  { t: "Create New Group", d: "Start your own study circle", icon: Plus, to: "/groups/create", variant: "hero" as const },
-  { t: "View Messages", d: "5 unread conversations", icon: MessageSquare, to: "/messages", variant: "soft" as const },
+  { t: "Join Group", d: "Browse open study groups", icon: Search, to: "/groups", variant: "soft" as const },
+  { t: "Create Group", d: "Start your own study circle", icon: Plus, to: "/groups/create", variant: "hero" as const },
   { t: "Upload Notes", d: "Share resources with your group", icon: Upload, to: "/groups/cs201", variant: "soft" as const },
+  { t: "Messages", d: "5 unread conversations", icon: MessageSquare, to: "/messages", variant: "soft" as const },
+  { t: "Schedule Session", d: "Plan a study meetup", icon: Calendar, to: "/groups/cs201", variant: "soft" as const },
 ];
 
 const badges = [
@@ -26,6 +27,16 @@ const badges = [
   { t: "Active Collaborator", icon: Award, earned: true },
   { t: "Top Contributor", icon: Trophy, earned: true },
   { t: "Study Champion", icon: Crown, earned: false },
+  { t: "Peer Mentor", icon: HeartHandshake, earned: true },
+  { t: "Academic Achiever", icon: GraduationCap, earned: false },
+];
+
+const recentActivity = [
+  { icon: Users, t: "Joined HCI 6322 Study Circle", w: "2 hours ago" },
+  { icon: FileText, t: "Uploaded Research Methods summary notes", w: "Yesterday" },
+  { icon: MessageSquare, t: "Replied to discussion in Business Analysis 7321", w: "Yesterday" },
+  { icon: Calendar, t: "RSVP'd to Saturday study session", w: "2 days ago" },
+  { icon: Trophy, t: "Earned the Peer Mentor badge", w: "3 days ago" },
 ];
 
 const Dashboard = () => {
