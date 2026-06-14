@@ -6,6 +6,7 @@ const messages = [
   "You're Making Great Progress",
   "Keep Going, You've Got This",
   "Small Steps Lead to Big Results",
+  "Success Is Built One Study Session At A Time",
 ];
 
 const MotivationCard = ({ index = 0 }: { index?: number }) => {
