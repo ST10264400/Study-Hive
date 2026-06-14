@@ -69,15 +69,18 @@ const Dashboard = () => {
           </div>
         </header>
 
-        {/* Motivation strip */}
-        <section aria-label="Motivational messages" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[0, 1, 2, 3].map((i) => <MotivationCard key={i} index={i} />)}
+        {/* Motivation Centre */}
+        <section aria-labelledby="motivation-heading">
+          <h2 id="motivation-heading" className="text-xl font-semibold mb-4">Motivation Centre</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[0, 1, 2, 3, 4].map((i) => <MotivationCard key={i} index={i} />)}
+          </div>
         </section>
 
         {/* Quick actions */}
         <section aria-labelledby="quick-actions-heading">
           <h2 id="quick-actions-heading" className="text-xl font-semibold mb-4">Quick actions</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {quickActions.map((a) => (
               <Card key={a.t} className="border-border/60 hover:shadow-card hover:-translate-y-0.5 transition-all">
                 <CardContent className="p-5 space-y-3">
@@ -105,7 +108,7 @@ const Dashboard = () => {
             {[
               { label: "Groups Joined", value: "4", icon: Users },
               { label: "Notes Shared", value: "12", icon: FileText },
-              { label: "Discussions Participated", value: "27", icon: MessageSquare },
+              { label: "Discussion Contributions", value: "27", icon: MessageSquare },
               { label: "Study Hours Logged", value: "48h", icon: Clock },
             ].map((s) => (
               <Card key={s.label} className="border-border/60">
