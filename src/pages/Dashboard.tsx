@@ -54,13 +54,13 @@ const Dashboard = () => {
             <p className="text-sm text-primary font-medium flex items-center gap-1.5">
               <Sparkles className="h-4 w-4" aria-hidden /> Welcome back, Oratile
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold mt-1 tracking-tight">Welcome back!</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mt-1 tracking-tight">Welcome Back, Student!</h1>
             <p className="text-muted-foreground mt-2 max-w-xl text-base">
-              Continue building your academic success through collaboration.
+              Continue building your academic success through collaboration and shared learning experiences.
             </p>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" onClick={() => toast.success("Opening group search")}>
+            <Button asChild variant="outline">
               <Link to="/groups"><Search className="h-4 w-4" aria-hidden />Find a group</Link>
             </Button>
             <Button asChild variant="hero">
