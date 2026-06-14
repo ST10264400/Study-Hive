@@ -187,6 +187,28 @@ const Dashboard = () => {
                 ))}
               </div>
             </section>
+
+            {/* Recent Activity */}
+            <section aria-labelledby="activity-heading" className="pt-4">
+              <h2 id="activity-heading" className="text-xl font-semibold mb-3">Recent activity</h2>
+              <Card className="border-border/60">
+                <CardContent className="p-2">
+                  <ul className="divide-y divide-border">
+                    {recentActivity.map((a, i) => (
+                      <li key={i} className="flex items-center gap-3 p-3">
+                        <div className="h-9 w-9 rounded-lg bg-primary-soft text-primary grid place-items-center flex-shrink-0">
+                          <a.icon className="h-4 w-4" aria-hidden />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm font-medium truncate">{a.t}</div>
+                          <div className="text-xs text-muted-foreground">{a.w}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </section>
           </section>
 
           {/* Side: schedule + badges + buddies */}
